@@ -13,7 +13,7 @@ function RoadSign (text, color, shape) {
 }
 
 RoadSign.prototype.whatsYourSign = function () {
-	console.log("I am a " + this.text + " sign.  I am " + this.color + " and I am a shapely " + this.shape + ".")
+	return "I am a " + this.text + " sign.  I am " + this.color + " and I am a shapely " + this.shape + ".";
 }
 
 var yield = new RoadSign ("Yield", "red and white", "triangle");
