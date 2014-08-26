@@ -22,15 +22,17 @@ Generator #2 is now off, removing 62 MW, for a total of 0 MW!
 */
 
 function changePowerTotal (totalCurrentPower, genID, genStatus, genPower) {
-	var totalCurrentPower = 0;
-	var genID = 1;
-	var genStatus = "on"
-	totalCurrentPower = 
 
-	alert("Generator #" + genID + " is now on, adding " + genPower + "MW, for a total of " + totalCurrentPower + "MW!");
-
-
-	alert("Generator #" + genID + " is now off, removing " + genPower + "MW, for a total of " + totalCurrentPower + "MW!");
-
-
+	if (genStatus == "on") {
+		totalCurrentPower += genPower;
+		alert("Generator #" + genID + " is now on, adding " + genPower + " MW, for a total of " + totalCurrentPower + "MW!");
+	//or should return be alert?
+	} else if (genStatus = "off") {
+		totalCurrentPower -= genPower;
+		alert("Generator #" + genID + " is now off, removing " + genPower + "MW, for a total of " + totalCurrentPower + "MW!");
+	}
+	return totalCurrentPower;
 }
+
+console.log(changePowerTotal(0, 2, "on", 62));
+console.log(changePowerTotal(62, 2, "off", 62));
